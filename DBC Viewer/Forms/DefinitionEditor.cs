@@ -16,6 +16,7 @@ namespace DBCViewer
         private bool m_changed;
         private bool m_saved;
         private MainForm m_mainForm;
+        private Int16 m_newFieldCount = 0;
 
         public DefinitionEditor()
         {
@@ -311,13 +312,16 @@ namespace DBCViewer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListViewItem item;
+            string _name = "newField" + m_newFieldCount.ToString();
+
+            ListViewItem item = new ListViewItem(new string[] { "0", _name, "int", "False" });
             if (listView1.SelectedItems.Count > 0)
-                item = listView1.Items.Insert(listView1.SelectedItems[0].Index + 1, new ListViewItem(new string[] { "0", "newField", "int", "False" }));
+                item = listView1.Items.Insert(listView1.SelectedItems[0].Index + 1, item);
             else
-                item = listView1.Items.Add(new ListViewItem(new string[] { "0", "newField", "int", "False" }));
+                item = listView1.Items.Add(item);
             item.Selected = true;
             m_changed = true;
+            ++m_newFieldCount;
         }
 
         private void button3_Click(object sender, EventArgs e)
