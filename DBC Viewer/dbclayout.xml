@@ -1,3 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <DBFilesClient>
+  <Achievement build="19342">
+    <index>
+      <primary>Id</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="int" name="Faction" />
+    <field type="int" name="InstanceId" />
+    <field type="uint" name="Supercedes" />
+    <field type="string" name="Title" />
+    <field type="string" name="Description" />
+    <field type="uint" name="Category" />
+    <field type="uint" name="Points" />
+    <field type="uint" name="UIOrder" />
+    <field type="uint" name="Flags" />
+    <field type="uint" name="IconId" />
+    <field type="string" name="Reward" />
+    <field type="uint" name="MinimumCriteria" />
+    <field type="uint" name="SharesCriteria" />
+    <field type="uint" name="CriteriaTree" />
+  </Achievement>
 </DBFilesClient>

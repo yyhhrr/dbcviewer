@@ -36,24 +36,26 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(250, 95);
+            this.listBox1.Size = new System.Drawing.Size(250, 88);
             this.listBox1.TabIndex = 0;
             this.toolTip1.SetToolTip(this.listBox1, "Double click on item from the list to use it.");
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
             // DefinitionSelect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 124);
+            this.ClientSize = new System.Drawing.Size(274, 114);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DefinitionSelect";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Definition";
             this.toolTip1.SetToolTip(this, "Double click on item from the list to use it.");
             this.ResumeLayout(false);

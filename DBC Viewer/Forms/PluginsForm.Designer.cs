@@ -36,25 +36,27 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(268, 173);
+            this.listBox1.Size = new System.Drawing.Size(268, 160);
             this.listBox1.TabIndex = 1;
             this.toolTip1.SetToolTip(this.listBox1, "Double click on item from the list to use it.");
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
             // PluginsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 199);
+            this.ClientSize = new System.Drawing.Size(292, 184);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PluginsForm";
             this.ShowInTaskbar = false;
-            this.Text = Properties.Resources.selectPlugin;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Select Plugin";
             this.toolTip1.SetToolTip(this, "Double click on item from the list to use it.");
             this.ResumeLayout(false);
 

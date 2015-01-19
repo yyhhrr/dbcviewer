@@ -44,9 +44,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(120, 224);
+            this.button1.Location = new System.Drawing.Point(120, 207);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 23);
+            this.button1.Size = new System.Drawing.Size(48, 21);
             this.button1.TabIndex = 1;
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.LabelWrap = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(12, 11);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(472, 206);
+            this.listView1.Size = new System.Drawing.Size(472, 190);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -114,9 +114,9 @@
             "float",
             "double",
             "string"});
-            this.comboBox1.Location = new System.Drawing.Point(384, 226);
+            this.comboBox1.Location = new System.Drawing.Point(384, 209);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
+            this.comboBox1.Size = new System.Drawing.Size(103, 20);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
@@ -124,9 +124,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 224);
+            this.button2.Location = new System.Drawing.Point(12, 207);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 23);
+            this.button2.Size = new System.Drawing.Size(48, 21);
             this.button2.TabIndex = 4;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -134,26 +134,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 226);
+            this.textBox1.Location = new System.Drawing.Point(213, 209);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 20);
+            this.textBox1.Size = new System.Drawing.Size(56, 21);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 229);
+            this.label1.Location = new System.Drawing.Point(174, 211);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 6;
             this.label1.Text = "Build:";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(66, 224);
+            this.button3.Location = new System.Drawing.Point(66, 207);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 23);
+            this.button3.Size = new System.Drawing.Size(48, 21);
             this.button3.TabIndex = 7;
             this.button3.Text = "Clone";
             this.button3.UseVisualStyleBackColor = true;
@@ -161,9 +161,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(285, 226);
+            this.textBox2.Location = new System.Drawing.Point(285, 209);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(90, 20);
+            this.textBox2.Size = new System.Drawing.Size(90, 21);
             this.textBox2.TabIndex = 8;
             this.textBox2.Visible = false;
             this.textBox2.WordWrap = false;
@@ -173,9 +173,9 @@
             // DefinitionEditor
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 263);
+            this.ClientSize = new System.Drawing.Size(499, 243);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -189,6 +189,7 @@
             this.MinimizeBox = false;
             this.Name = "DefinitionEditor";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Definition Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DefinitionEditor_FormClosing);
             this.Load += new System.EventHandler(this.DefinitionEditor_Load);
