@@ -51,14 +51,14 @@ namespace DBCViewer
                 // WDB2 specific fields
                 uint tableHash = reader.ReadUInt32();   // new field in WDB2
                 uint build = reader.ReadUInt32();       // new field in WDB2
-                uint unk1 = reader.ReadUInt32();        // new field in WDB2
+                uint timestampLastWritten = reader.ReadUInt32(); // new field in WDB2
 
                 if (build > 12880) // new extended header
                 {
                     int MinId = reader.ReadInt32();     // new field in WDB2
                     int MaxId = reader.ReadInt32();     // new field in WDB2
                     int locale = reader.ReadInt32();    // new field in WDB2
-                    int unk5 = reader.ReadInt32();      // new field in WDB2
+                    int unk1 = reader.ReadInt32();      // new field in WDB2
 
                     if (MaxId != 0)
                     {

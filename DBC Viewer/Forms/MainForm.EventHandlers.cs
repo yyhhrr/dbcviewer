@@ -56,7 +56,7 @@ namespace DBCViewer
             }
             else
             {
-                if (!(m_reader is WDBReader) && !(m_reader is STLReader))
+                if (!(m_reader is WDBReader))
                     val = (uint)(from k in m_reader.StringTable where string.Compare(k.Value, (string)value, StringComparison.Ordinal) == 0 select k.Key).FirstOrDefault();
             }
 
@@ -111,10 +111,8 @@ namespace DBCViewer
             bool notADB = !(m_reader is ADBReader);
             // hack for *.wdb files (because they don't have FieldsCount)
             bool notWDB = !(m_reader is WDBReader);
-            // hack for *.wdb files (because they don't have FieldsCount)
-            bool notSTL = !(m_reader is STLReader);
 
-            if (GetFieldsCount(m_fields) != m_reader.FieldsCount && notADB && notWDB && notSTL)
+            if (GetFieldsCount(m_fields) != m_reader.FieldsCount && notADB && notWDB)
             {
                 string msg = String.Format(CultureInfo.InvariantCulture, "{0} has invalid definition!\nFields count mismatch: got {1}, expected {2}", Path.GetFileName(file), m_fields.Count, m_reader.FieldsCount);
                 ShowErrorMessageBox(msg);
@@ -170,15 +168,7 @@ namespace DBCViewer
                             dataRow[j] = br.ReadDouble();
                             break;
                         case "string":
-                            if (m_reader is WDBReader)
-                                dataRow[j] = br.ReadStringNull();
-                            else if (m_reader is STLReader)
-                            {
-                                int offset = br.ReadInt32();
-                                dataRow[j] = (m_reader as STLReader).ReadString(offset);
-                            }
-                            else
-                                dataRow[j] = m_reader.StringTable[br.ReadInt32()];
+                            dataRow[j] = m_reader is WDBReader ? br.ReadStringNull() : m_reader.StringTable[br.ReadInt32()];
                             break;
                         default:
                             throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "Unknown field type {0}!", types[j]));
