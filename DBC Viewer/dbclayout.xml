@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <DBFilesClient>
-  <Achievement build="19342">
+  <Achievement build="19342"> <!-- Achievement.dbc -->
     <index>
       <primary>Id</primary>
     </index>
@@ -20,7 +20,7 @@
     <field type="uint" name="SharesCriteria" />
     <field type="uint" name="CriteriaTree" />
   </Achievement>
-  <Item-sparse build="19342">
+  <Item-sparse build="19342"> <!-- Item-sparse.db2 -->
     <index>
       <primary>Id</primary>
     </index>
@@ -127,4 +127,15 @@
     <field type="uint" name="CurrencySubstitutionCount" />
     <field type="uint" name="ItemNameDescriptionId" />
   </Item-sparse>
+  <Item build="19342"> <!-- Item.adb -->
+    <field type="uint" name="ID" />
+    <field type="uint" name="Class" />
+    <field type="uint" name="SubClass" />
+    <field type="int" name="SoundOverrideSubclass" />
+    <field type="int" name="Material" />
+    <field type="uint" name="InventoryType" />
+    <field type="uint" name="Sheath" />
+    <field type="uint" name="FileDataID" />
+    <field type="uint" name="GroupSoundsID" />
+  </Item>
 </DBFilesClient>
