@@ -207,10 +207,6 @@
       <Project>{1A2AD897-3AB7-4C6E-9071-B63D54D36E84}</Project>
       <Name>PluginInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestPlugin\TestPlugin.csproj">
-      <Project>{14DCBB3F-0ED0-425B-B0B0-72A67D9F5394}</Project>
-      <Name>TestPlugin</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
