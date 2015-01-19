@@ -13,5 +13,5 @@
 *.suo
 *.user
 
-*/bin/
-*/obj/
+bin
+obj
