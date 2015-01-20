@@ -40,7 +40,7 @@ namespace DBCViewer
 
                 if (reader.ReadUInt32() != DB2FmtSig)
                 {
-                    throw new InvalidDataException(String.Format("File {0} isn't valid DBC file!", fileName));
+                    throw new InvalidDataException(String.Format("File {0} isn't valid DB2 file!", fileName));
                 }
 
                 RecordsCount = reader.ReadInt32();

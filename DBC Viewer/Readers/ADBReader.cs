@@ -42,7 +42,7 @@ namespace DBCViewer
 
                 if (signature != ADBFmtSig)
                 {
-                    throw new InvalidDataException(String.Format("File {0} isn't valid DBC file!", fileName));
+                    throw new InvalidDataException(String.Format("File {0} isn't valid ADB file!", fileName));
                 }
 
                 RecordsCount = reader.ReadInt32();
