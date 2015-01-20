@@ -21,11 +21,14 @@ namespace Export2SQL
 
             WriteSqlStructure(sqlWriter, data);
 
-            foreach (DataRow row in data.Rows)
-            {
-                StringBuilder result = new StringBuilder();
-                result.AppendFormat("INSERT INTO `dbc_{0}` VALUES (", Path.GetFileNameWithoutExtension(data.TableName));
+            StringBuilder result = new StringBuilder();
+            result.AppendFormat("INSERT INTO `dbc_{0}` VALUES", Path.GetFileNameWithoutExtension(data.TableName));
+            result.AppendLine();
 
+            //foreach (DataRow row in data.Rows)
+            for (int x = 0; x < data.Rows.Count; ++x)
+            {
+                result.Append("(");
                 int flds = 0;
 
                 for (var i = 0; i < data.Columns.Count; ++i)
@@ -33,37 +36,23 @@ namespace Export2SQL
                     switch (data.Columns[i].DataType.Name)
                     {
                         case "Int64":
-                            result.Append(row[i]);
-                            break;
                         case "UInt64":
-                            result.Append(row[i]);
-                            break;
                         case "Int32":
-                            result.Append(row[i]);
-                            break;
                         case "UInt32":
-                            result.Append(row[i]);
-                            break;
                         case "Int16":
-                            result.Append(row[i]);
-                            break;
                         case "UInt16":
-                            result.Append(row[i]);
-                            break;
                         case "SByte":
-                            result.Append(row[i]);
-                            break;
                         case "Byte":
-                            result.Append(row[i]);
+                            result.Append(data.Rows[x][i]);
                             break;
                         case "Single":
-                            result.Append(((float)row[i]).ToString(CultureInfo.InvariantCulture));
+                            result.Append(((float)data.Rows[x][i]).ToString(CultureInfo.InvariantCulture));
                             break;
                         case "Double":
-                            result.Append(((double)row[i]).ToString(CultureInfo.InvariantCulture));
+                            result.Append(((double)data.Rows[x][i]).ToString(CultureInfo.InvariantCulture));
                             break;
                         case "String":
-                            result.Append("\"" + StripBadCharacters((string)row[i]) + "\"");
+                            result.Append("\"" + StripBadCharacters((string)data.Rows[x][i]) + "\"");
                             break;
                         default:
                             throw new Exception(String.Format("Unknown field type {0}!", data.Columns[i].DataType.Name));
@@ -75,8 +64,13 @@ namespace Export2SQL
                     flds++;
                 }
 
-                result.Append(");");
+                if (x < data.Rows.Count - 1)
+                    result.Append("),");
+                else
+                    result.Append(");");
+
                 sqlWriter.WriteLine(result);
+                result.Clear();
             }
 
             sqlWriter.Flush();
@@ -133,7 +127,10 @@ namespace Export2SQL
                         throw new Exception(String.Format("Unknown field type {0}!", data.Columns[i].DataType.Name));
                 }
 
-                sqlWriter.WriteLine(",");
+                if (i < data.Columns.Count - 1 || data.PrimaryKey.Length > 0)
+                    sqlWriter.WriteLine(",");
+                else
+                    sqlWriter.WriteLine();
             }
 
             foreach (DataColumn index in data.PrimaryKey)
