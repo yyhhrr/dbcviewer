@@ -13,14 +13,29 @@ namespace DBCViewer
         {
             0x574D4F42, // creaturecache.wdb
             0x57474F42, // gameobjectcache.wdb
-            0x57494442, // itemcache.wdb
-            0x574E4442, // itemnamecache.wdb
-            0x57495458, // itemtextcache.wdb
+            0x57494442, // itemcache.wdb        Not in 4.x -> 6.x
+            0x574E4442, // itemnamecache.wdb    Not in 4.x -> 6.x
+            0x57495458, // itemtextcache.wdb    Not in 4.x -> 6.x
             0x574E5043, // npccache.wdb
             0x57505458, // pagetextcache.wdb
             0x57515354, // questcache.wdb
+                        // petitioncache.wdb
             0x5752444E  // wowcache.wdb
         };
+
+        //private string[] WDBSigs = new[]
+        //{
+        //    "WMOB", // creaturecache.wdb
+        //    "WGOB", // gameobjectcache.wdb
+        //    "WIDB", // itemcache.wdb
+        //    "WNDB", // itemnamecache.wdb
+        //    "WITX", // itemtextcache.wdb
+        //    "WNPC", // npccache.wdb
+        //    "WPTX", // pagetextcache.wdb
+        //    "WQST", // questcache.wdb
+        //    "WPTN", // petitioncache.wdb
+        //    "WRDN"  // wowcache.wdb
+        //};
 
         public int RecordsCount { get; private set; }
         public int FieldsCount { get; private set; }
