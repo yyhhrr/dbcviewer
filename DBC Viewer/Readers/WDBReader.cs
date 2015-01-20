@@ -18,8 +18,8 @@ namespace DBCViewer
             0x57495458, // itemtextcache.wdb    Not in 4.x -> 6.x
             0x574E5043, // npccache.wdb
             0x57505458, // pagetextcache.wdb
+            0x5750544E, // petitioncache.wdb
             0x57515354, // questcache.wdb
-                        // petitioncache.wdb
             0x5752444E  // wowcache.wdb
         };
 
@@ -32,8 +32,8 @@ namespace DBCViewer
         //    "WITX", // itemtextcache.wdb
         //    "WNPC", // npccache.wdb
         //    "WPTX", // pagetextcache.wdb
-        //    "WQST", // questcache.wdb
         //    "WPTN", // petitioncache.wdb
+        //    "WQST", // questcache.wdb
         //    "WRDN"  // wowcache.wdb
         //};
 
