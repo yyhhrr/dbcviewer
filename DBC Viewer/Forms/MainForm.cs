@@ -64,7 +64,8 @@ namespace DBCViewer
 
             DisposeFilterForm();
 
-            m_dbcName = Path.GetFileNameWithoutExtension(file);
+            // m_dbcName = Path.GetFileNameWithoutExtension(file);
+            m_dbcName = Path.GetFileName(file); // 带上扩展名，区分4种不同的格式文件，因为有重名的文件，但是结构不同，让软件自动区分
 
             LoadDefinitions(); // reload in case of modification
 
@@ -265,7 +266,6 @@ namespace DBCViewer
         private void LoadDefinitions()
         {
             m_definitions = new XmlDocument();
-            //var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             m_definitions.Load(Path.Combine(m_workingFolder, "dbclayout.xml"));
         }
 
