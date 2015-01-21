@@ -1,5 +1,4 @@
-﻿using PluginInterface;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
@@ -38,18 +37,6 @@ namespace DBCViewer
         // Delegates
         delegate void SetDataViewDelegate(DataView view);
 
-        // Plugins
-        [ImportMany(AllowRecomposition = true)]
-        List<IPlugin> Plugins { get; set; }
-
-        [Export("PluginFinished")]
-        public void PluginFinished(int result)
-        {
-            var msg = String.Format("Plugin finished! {0} rows affected.", result);
-            toolStripStatusLabel1.Text = msg;
-            MessageBox.Show(msg);
-        }
-
         // MainForm
         public MainForm()
         {
@@ -64,11 +51,9 @@ namespace DBCViewer
 
             DisposeFilterForm();
 
-            // m_dbcName = Path.GetFileNameWithoutExtension(file);
             m_dbcName = Path.GetFileName(file); // 带上扩展名，区分4种不同的格式文件，因为有重名的文件，但是结构不同，让软件自动区分
 
             LoadDefinitions(); // reload in case of modification
-
             m_definition = GetDefinition();
 
             if (m_definition == null)
@@ -274,11 +259,6 @@ namespace DBCViewer
             m_catalog = new DirectoryCatalog(m_workingFolder);
             var container = new CompositionContainer(m_catalog);
             container.ComposeParts(this);
-        }
-
-        private void RunPlugin(object obj)
-        {
-            Plugins[(int)obj].Run(m_dataTable);
         }
 
         private static int GetFieldsCount(XmlNodeList fields)

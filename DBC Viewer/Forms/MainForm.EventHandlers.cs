@@ -265,28 +265,10 @@ namespace DBCViewer
                 ShowErrorMessageBox("Nothing loaded yet!");
                 return;
             }
-
             m_catalog.Refresh();
 
-            if (Plugins.Count == 0)
-            {
-                ShowErrorMessageBox("No plugins found!");
-                return;
-            }
-
-            PluginsForm selector = new PluginsForm();
-            selector.SetPlugins(Plugins);
-            DialogResult result = selector.ShowDialog(this);
-            selector.Dispose();
-            if (result != DialogResult.OK || selector.PluginIndex == -1)
-            {
-                ShowErrorMessageBox("No plugin selected!");
-                return;
-            }
-
-            toolStripStatusLabel1.Text = "Plugin working...";
-            Thread pluginThread = new Thread(RunPlugin);
-            pluginThread.Start(selector.PluginIndex);
+            Export2SQL _Sql = new Export2SQL();
+            _Sql.Run(m_dataTable);
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

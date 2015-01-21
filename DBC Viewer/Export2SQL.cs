@@ -5,16 +5,11 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using PluginInterface;
 
-namespace Export2SQL
+namespace DBCViewer
 {
-    [Export(typeof(IPlugin))]
-    public class Export2SQL : IPlugin
+    public class Export2SQL
     {
-        [Import("PluginFinished")]
-        public Action<int> Finished { get; set; }
-
         public void Run(DataTable data)
         {
             StreamWriter sqlWriter = new StreamWriter(Path.GetFileNameWithoutExtension(data.TableName) + ".sql");
@@ -76,7 +71,9 @@ namespace Export2SQL
             sqlWriter.Flush();
             sqlWriter.Close();
 
-            Finished(data.Rows.Count);
+            var msg = String.Format("Plugin finished! {0} rows affected.", data.Rows.Count);
+            //toolStripStatusLabel1.Text = msg;
+            System.Windows.Forms.MessageBox.Show(msg);
         }
 
         private void WriteSqlStructure(StreamWriter sqlWriter, DataTable data)
