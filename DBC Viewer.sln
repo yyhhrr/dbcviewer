@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Export2SQL", "Export2SQL\Export2SQL.csproj", "{34EFF3F2-00F6-4BAA-9694-33175B8F92D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowDataFileParser", "WowDataFileParser\WowDataFileParser.csproj", "{8C61615B-ACEB-421F-AC84-B7EDE6620998}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{34EFF3F2-00F6-4BAA-9694-33175B8F92D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34EFF3F2-00F6-4BAA-9694-33175B8F92D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34EFF3F2-00F6-4BAA-9694-33175B8F92D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C61615B-ACEB-421F-AC84-B7EDE6620998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C61615B-ACEB-421F-AC84-B7EDE6620998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C61615B-ACEB-421F-AC84-B7EDE6620998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C61615B-ACEB-421F-AC84-B7EDE6620998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
