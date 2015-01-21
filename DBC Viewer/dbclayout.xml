@@ -2,7 +2,7 @@
 <DBFilesClient>
   <Achievement.dbc build="19342">
     <index>
-      <primary>Id</primary>
+      <primary>ID</primary>
     </index>
     <field type="uint" name="ID" />
     <field type="int" name="Faction" />
@@ -22,7 +22,7 @@
   </Achievement.dbc>
   <Item-sparse.db2 build="19342">
     <index>
-      <primary>Id</primary>
+      <primary>ID</primary>
     </index>
     <field type="uint" name="ID" />
     <field type="uint" name="Quality" />
@@ -178,7 +178,7 @@
   </ChrSpecialization.dbc>
   <BattlemasterList.dbc build="19342">
     <index>
-      <primary>field0</primary>
+      <primary>ID</primary>
     </index>
     <field type="uint" name="ID" />
     <field type="int" name="MapID" />
