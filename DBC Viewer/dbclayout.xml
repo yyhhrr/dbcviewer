@@ -138,4 +138,147 @@
     <field type="uint" name="FileDataID" />
     <field type="uint" name="GroupSoundsID" />
   </Item.adb>
+  <CreatureFamily.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="float" name="MinScale" />
+    <field type="uint" name="MinScaleLevel" />
+    <field type="float" name="MaxScale" />
+    <field type="uint" name="MaxScaleLevel" />
+    <field type="uint" name="SkillLine" />
+    <field type="uint" name="SkillLine2" />
+    <field type="uint" name="PetFoodMask" />
+    <field type="uint" name="PetTalentType" />
+    <field type="uint" name="CategoryEnumID" />
+    <field type="string" name="Name" />
+    <field type="string" name="IconFile" />
+  </CreatureFamily.dbc>
+  <ChrSpecialization.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="string" name="BackgroundFile" />
+    <field type="uint" name="ClassID" />
+    <field type="uint" name="MasterySpellID" />
+    <field type="uint" name="MasterySpellID2" />
+    <field type="uint" name="OrderIndex" />
+    <field type="uint" name="PetTalentType" />
+    <field type="uint" name="Role" />
+    <field type="uint" name="SpellIconID" />
+    <field type="uint" name="RaidBuffs" />
+    <field type="uint" name="Flags" />
+    <field type="string" name="Name" />
+    <field type="string" name="Name2" />
+    <field type="string" name="Description" />
+    <field type="uint" name="PrimaryStatOrder" />
+    <field type="uint" name="PrimaryStatOrder2" />
+  </ChrSpecialization.dbc>
+  <BattlemasterList.dbc build="19342">
+    <index>
+      <primary>field0</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="int" name="MapID" />
+    <field type="int" name="MapID2" />
+    <field type="int" name="MapID3" />
+    <field type="int" name="MapID4" />
+    <field type="int" name="MapID5" />
+    <field type="int" name="MapID6" />
+    <field type="int" name="MapID7" />
+    <field type="int" name="MapID8" />
+    <field type="int" name="MapID9" />
+    <field type="int" name="MapID10" />
+    <field type="int" name="MapID11" />
+    <field type="int" name="MapID12" />
+    <field type="int" name="MapID13" />
+    <field type="int" name="MapID14" />
+    <field type="int" name="MapID15" />
+    <field type="int" name="MapID16" />
+    <field type="uint" name="InstanceType" />
+    <field type="uint" name="GroupsAllowed" />
+    <field type="string" name="Name" />
+    <field type="uint" name="MaxGroupSize" />
+    <field type="uint" name="HolidayWorldState" />
+    <field type="uint" name="MinLevel" />
+    <field type="uint" name="MaxLevel" />
+    <field type="uint" name="RatedPlayers" />
+    <field type="uint" name="MinPlayers" />
+    <field type="uint" name="MaxPlayers" />
+    <field type="uint" name="Flags" />
+    <field type="uint" name="IconFileDataID" />
+    <field type="string" name="GameType" />
+    <field type="uint" name="Unk30" />
+  </BattlemasterList.dbc>
+  <AreaTable.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="uint" name="MapID" />
+    <field type="uint" name="ParentAreaID" />
+    <field type="uint" name="AreaBit" />
+    <field type="uint" name="Flags" />
+    <field type="uint" name="Flags2" />
+    <field type="uint" name="SoundProviderPref" />
+    <field type="uint" name="SoundProviderPrefUnderwater" />
+    <field type="uint" name="AmbienceID" />
+    <field type="uint" name="ZoneMusic" />
+    <field type="string" name="ZoneName" />
+    <field type="uint" name="IntroSound" />
+    <field type="uint" name="ExplorationLevel" />
+    <field type="string" name="AreaName" />
+    <field type="uint" name="FactionGroupMask" />
+    <field type="uint" name="LiquidTypeID" />
+    <field type="uint" name="LiquidTypeID2" />
+    <field type="uint" name="LiquidTypeID3" />
+    <field type="uint" name="LiquidTypeID4" />
+    <field type="float" name="AmbientMultiplier" />
+    <field type="uint" name="MountFlags" />
+    <field type="uint" name="UWIntroMusic" />
+    <field type="uint" name="UWZoneMusic" />
+    <field type="uint" name="UWAmbience" />
+    <field type="uint" name="WorldPvPID" />
+    <field type="uint" name="PvPCombastWorldStateID" />
+    <field type="uint" name="WildBattlePetLevelMin" />
+    <field type="uint" name="WildBattlePetLevelMax" />
+    <field type="uint" name="WindSettingsID" />
+  </AreaTable.dbc>
+  <JournalEncounterSection.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="uint" name="journalEncounterID" />
+    <field type="uint" name="nextSiblingSectionID" />
+    <field type="uint" name="firstChildSectionID" />
+    <field type="uint" name="parentSectionID" />
+    <field type="uint" name="orderIndex" />
+    <field type="uint" name="type" />
+    <field type="uint" name="flags" />
+    <field type="uint" name="iconFlags" />
+    <field type="string" name="title" />
+    <field type="string" name="bodyText" />
+    <field type="uint" name="difficultyMask" />
+    <field type="uint" name="iconCreatureDisplayInfoID" />
+    <field type="uint" name="spellID" />
+    <field type="uint" name="iconFileDataID" />
+  </JournalEncounterSection.dbc>
+  <JournalInstance.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="uint" name="mapID" />
+    <field type="uint" name="areaID" />
+    <field type="uint" name="buttonFiledataID" />
+    <field type="uint" name="buttonSmallFileDataID" />
+    <field type="uint" name="backgroundFiledataID" />
+    <field type="uint" name="loreFileDataID" />
+    <field type="uint" name="field7" />
+    <field type="string" name="name" />
+    <field type="string" name="description" />
+  </JournalInstance.dbc>
 </DBFilesClient>
