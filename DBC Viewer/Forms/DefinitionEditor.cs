@@ -46,7 +46,7 @@ namespace DBCViewer
         {
             XmlDocument doc = new XmlDocument();
 
-            string docPath = Path.Combine(m_mainForm.WorkingFolder, "dbclayout.xml");
+            string docPath = Path.Combine(m_mainForm.WorkingFolder, "Structure.xml");
 
             doc.Load(docPath);
 

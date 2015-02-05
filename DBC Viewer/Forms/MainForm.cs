@@ -251,7 +251,7 @@ namespace DBCViewer
         private void LoadDefinitions()
         {
             m_definitions = new XmlDocument();
-            m_definitions.Load(Path.Combine(m_workingFolder, "dbclayout.xml"));
+            m_definitions.Load(Path.Combine(m_workingFolder, "Structure.xml"));
         }
 
         private void Compose()

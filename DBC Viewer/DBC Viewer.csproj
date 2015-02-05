@@ -102,8 +102,7 @@
     <Compile Include="Readers\WDBReader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dbc.ico" />
-    <Content Include="dbclayout.xml">
+    <Content Include="Structure.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
