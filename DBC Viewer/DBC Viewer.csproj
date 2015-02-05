@@ -34,7 +34,7 @@
     <RootNamespace>DBC_Viewer</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>dbc.ico</ApplicationIcon>
+    <ApplicationIcon>ToolsICO.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -107,6 +107,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ToolsICO.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\DefinitionEditor.resx">
