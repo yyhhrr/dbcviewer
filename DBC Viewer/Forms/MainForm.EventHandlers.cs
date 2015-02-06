@@ -13,19 +13,6 @@ namespace DBCViewer
 {
     partial class MainForm
     {
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() != DialogResult.OK)
-                return;
-
-            LoadFile(openFileDialog1.FileName);
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void dataGridView1_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
         {
             if (e.RowIndex == -1)
@@ -258,19 +245,6 @@ namespace DBCViewer
             SetDataSource(m_dataTable.DefaultView);
         }
 
-        private void runPluginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (m_dataTable == null)
-            {
-                ShowErrorMessageBox("Nothing loaded yet!");
-                return;
-            }
-            m_catalog.Refresh();
-
-            Export2SQL _Sql = new Export2SQL();
-            _Sql.Run(m_dataTable);
-        }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             XmlAttribute attribute = m_fields[e.ColumnIndex].Attributes["format"];
@@ -311,57 +285,12 @@ namespace DBCViewer
             ((ToolStripMenuItem)columnsFilterToolStripMenuItem.DropDownItems[index]).Checked = true;
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CloseFile();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            WindowState = Properties.Settings.Default.WindowState;
-            Size = Properties.Settings.Default.WindowSize;
-            Location = Properties.Settings.Default.WindowLocation;
-
-            m_workingFolder = Application.StartupPath;
-            dataGridView1.AutoGenerateColumns = true;
-
-            LoadDefinitions();
-            Compose();
-
-            string[] cmds = Environment.GetCommandLineArgs();
-            if (cmds.Length > 1)
-                LoadFile(cmds[1]);
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.WindowState = WindowState;
-
-            if (WindowState == FormWindowState.Normal)
-            {
-                Properties.Settings.Default.WindowSize = Size;
-                Properties.Settings.Default.WindowLocation = Location;
-            }
-            else
-            {
-                Properties.Settings.Default.WindowSize = RestoreBounds.Size;
-                Properties.Settings.Default.WindowLocation = RestoreBounds.Location;
-            }
-
-            Properties.Settings.Default.Save();
-        }
-
         private void difinitionEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (m_dbcName == null)
                 return;
 
             StartEditor();
-        }
-
-        private void reloadDefinitionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadDefinitions();
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

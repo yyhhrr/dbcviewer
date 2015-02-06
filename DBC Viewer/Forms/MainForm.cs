@@ -43,6 +43,79 @@ namespace DBCViewer
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            WindowState = Properties.Settings.Default.WindowState;
+            Size = Properties.Settings.Default.WindowSize;
+            Location = Properties.Settings.Default.WindowLocation;
+
+            m_workingFolder = Application.StartupPath;
+            dataGridView1.AutoGenerateColumns = true;
+
+            LoadDefinitions();
+            Compose();
+
+            // 支持文件拖入加载
+            string[] cmds = Environment.GetCommandLineArgs();
+            if (cmds.Length > 1)
+                LoadFile(cmds[1]);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.WindowState = WindowState;
+
+            if (WindowState == FormWindowState.Normal)
+            {
+                Properties.Settings.Default.WindowSize = Size;
+                Properties.Settings.Default.WindowLocation = Location;
+            }
+            else
+            {
+                Properties.Settings.Default.WindowSize = RestoreBounds.Size;
+                Properties.Settings.Default.WindowLocation = RestoreBounds.Location;
+            }
+
+            Properties.Settings.Default.Save();
+        }
+
+        // 菜单
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+                return;
+
+            LoadFile(openFileDialog1.FileName);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseFile();
+        }
+
+        private void reloadDefinitionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadDefinitions();
+        }
+
+        private void runPluginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (m_dataTable == null)
+            {
+                ShowErrorMessageBox("Nothing loaded yet!");
+                return;
+            }
+            m_catalog.Refresh();
+
+            Export2SQL _Sql = new Export2SQL();
+            _Sql.Run(m_dataTable);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void LoadFile(string file)
         {
             m_dbcFile = file;

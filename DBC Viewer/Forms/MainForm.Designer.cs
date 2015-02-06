@@ -98,42 +98,42 @@
             this.runPluginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.fileToolStripMenuItem.Text = "文件(&F)";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.openToolStripMenuItem.Text = "Open...";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.openToolStripMenuItem.Text = "打开...";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.closeToolStripMenuItem.Text = "关闭";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // reloadDefinitionsToolStripMenuItem
             // 
             this.reloadDefinitionsToolStripMenuItem.Name = "reloadDefinitionsToolStripMenuItem";
-            this.reloadDefinitionsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.reloadDefinitionsToolStripMenuItem.Text = "Reload Definitions";
+            this.reloadDefinitionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.reloadDefinitionsToolStripMenuItem.Text = "重新载入结构配置";
             this.reloadDefinitionsToolStripMenuItem.Click += new System.EventHandler(this.reloadDefinitionsToolStripMenuItem_Click);
             // 
             // runPluginToolStripMenuItem
             // 
             this.runPluginToolStripMenuItem.Name = "runPluginToolStripMenuItem";
-            this.runPluginToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.runPluginToolStripMenuItem.Text = "Run plugin...";
+            this.runPluginToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.runPluginToolStripMenuItem.Text = "导出为SQL文件";
             this.runPluginToolStripMenuItem.Click += new System.EventHandler(this.runPluginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.exitToolStripMenuItem.Text = "退出";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -145,8 +145,8 @@
             this.resetColumnsFilterToolStripMenuItem,
             this.difinitionEditorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
+            this.editToolStripMenuItem.Text = "编辑(&E)";
             // 
             // filterToolStripMenuItem
             // 
@@ -187,13 +187,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.helpToolStripMenuItem.Text = "帮助(&H)";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
