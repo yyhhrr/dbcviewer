@@ -108,7 +108,7 @@ namespace DBCViewer
             m_catalog.Refresh();
 
             Export2SQL _Sql = new Export2SQL();
-            _Sql.Run(m_dataTable);
+            _Sql.Run2SQL(m_dataTable);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,10 +116,14 @@ namespace DBCViewer
             Application.Exit();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("DBC Viewer @ 2013 TOM_RUS\nDBC Viewer @ 2015 ZWJ Qq：41782992", "关于 DBC Viewer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void LoadFile(string file)
         {
             m_dbcFile = file;
-            Text = "DBC Viewer";
             SetDataSource(null);
 
             DisposeFilterForm();
@@ -144,7 +148,6 @@ namespace DBCViewer
 
         private void CloseFile()
         {
-            Text = "DBC Viewer";
             SetDataSource(null);
 
             DisposeFilterForm();
@@ -206,7 +209,7 @@ namespace DBCViewer
         private static void ShowErrorMessageBox(string format, params object[] args)
         {
             var msg = String.Format(CultureInfo.InvariantCulture, format, args);
-            MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(msg, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void CreateIndexes()

@@ -5,12 +5,13 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace DBCViewer
 {
     public class Export2SQL
     {
-        public void Run(DataTable data)
+        public void Run2SQL(DataTable data)
         {
             StreamWriter sqlWriter = new StreamWriter(Path.GetFileNameWithoutExtension(data.TableName) + ".sql");
 
@@ -50,7 +51,7 @@ namespace DBCViewer
                             result.Append("\"" + StripBadCharacters((string)data.Rows[x][i]) + "\"");
                             break;
                         default:
-                            throw new Exception(String.Format("Unknown field type {0}!", data.Columns[i].DataType.Name));
+                            throw new Exception(String.Format("未知的数据类型：{0}!", data.Columns[i].DataType.Name));
                     }
 
                     if (flds != data.Columns.Count - 1)
@@ -71,9 +72,8 @@ namespace DBCViewer
             sqlWriter.Flush();
             sqlWriter.Close();
 
-            var msg = String.Format("Plugin finished! {0} rows affected.", data.Rows.Count);
-            //toolStripStatusLabel1.Text = msg;
-            System.Windows.Forms.MessageBox.Show(msg);
+            var msg = String.Format("提示：共计导出 {0} 条数据，SQL文件生成成功。", data.Rows.Count);
+            MessageBox.Show(msg, "完成");
         }
 
         private void WriteSqlStructure(StreamWriter sqlWriter, DataTable data)
