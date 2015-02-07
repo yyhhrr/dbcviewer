@@ -5,9 +5,9 @@ namespace DBCViewer
 {
     class DBReaderFactory
     {
-        public static IWowClientDBReader GetReader(string file)
+        public static BaseReader GetReader(string file)
         {
-            IWowClientDBReader reader = null;
+            BaseReader reader = null;
 
             var ext = Path.GetExtension(file).ToUpperInvariant();
             switch (ext)

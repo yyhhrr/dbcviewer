@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DBCViewer
 {
-    class DBCReader : IWowClientDBReader
+    class DBCReader : BaseReader
     {
         private const uint HeaderSize = 20;
         private const uint DBCFmtSig = 0x43424457;          // WDBC

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace DBCViewer
 {
-    interface IWowClientDBReader
+    interface BaseReader
     {
         int RecordsCount { get; }
         int FieldsCount { get; }

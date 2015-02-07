@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DBCViewer
 {
-    class DB2Reader : IWowClientDBReader
+    class DB2Reader : BaseReader
     {
         private const int HeaderSize = 48;
         private const uint DB2FmtSig = 0x32424457;          // WDB2
