@@ -144,21 +144,21 @@
             // columnsFilterToolStripMenuItem
             // 
             this.columnsFilterToolStripMenuItem.Name = "columnsFilterToolStripMenuItem";
-            this.columnsFilterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.columnsFilterToolStripMenuItem.Text = "Columns Filter...";
+            this.columnsFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.columnsFilterToolStripMenuItem.Text = "隐藏列...";
             // 
             // resetColumnsFilterToolStripMenuItem
             // 
             this.resetColumnsFilterToolStripMenuItem.Name = "resetColumnsFilterToolStripMenuItem";
-            this.resetColumnsFilterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.resetColumnsFilterToolStripMenuItem.Text = "Reset Columns Filter";
+            this.resetColumnsFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resetColumnsFilterToolStripMenuItem.Text = "刷新列";
             this.resetColumnsFilterToolStripMenuItem.Click += new System.EventHandler(this.resetColumnsFilterToolStripMenuItem_Click);
             // 
             // difinitionEditorToolStripMenuItem
             // 
             this.difinitionEditorToolStripMenuItem.Name = "difinitionEditorToolStripMenuItem";
-            this.difinitionEditorToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.difinitionEditorToolStripMenuItem.Text = "Definitions Editor";
+            this.difinitionEditorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.difinitionEditorToolStripMenuItem.Text = "编辑结构";
             this.difinitionEditorToolStripMenuItem.Click += new System.EventHandler(this.difinitionEditorToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
