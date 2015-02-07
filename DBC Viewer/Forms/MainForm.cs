@@ -574,25 +574,6 @@ namespace DBCViewer
             }
         }
 
-        private void autoSizeColumnsModeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem control = (ToolStripMenuItem)sender;
-
-            foreach (ToolStripMenuItem item in autoSizeModeToolStripMenuItem.DropDownItems)
-                if (item != control)
-                    item.Checked = false;
-
-            int index = (int)columnContextMenuStrip.Tag;
-            dataGridView1.Columns[index].AutoSizeMode = (DataGridViewAutoSizeColumnMode)Enum.Parse(typeof(DataGridViewAutoSizeColumnMode), (string)control.Tag);
-        }
-
-        private void hideToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var index = (int)columnContextMenuStrip.Tag;
-            dataGridView1.Columns[index].Visible = false;
-            ((ToolStripMenuItem)columnsFilterToolStripMenuItem.DropDownItems[index]).Checked = true;
-        }
-
         private void difinitionEditorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (m_dbcName == null)
