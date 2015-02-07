@@ -119,6 +119,23 @@ namespace DBCViewer
             Application.Exit();
         }
 
+        private void resetColumnsFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.Visible = true;
+                ((ToolStripMenuItem)columnsFilterToolStripMenuItem.DropDownItems[col.Name]).Checked = false;
+            }
+        }
+
+        private void difinitionEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (m_dbcName == null)
+                return;
+
+            StartEditor();
+        }
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("DBC Viewer @ 2013 TOM_RUS\nDBC Viewer @ 2015 ZWJ Qq：41782992", "关于 DBC Viewer", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -563,23 +580,6 @@ namespace DBCViewer
             string fmtStr = "{0:" + attribute.Value + "}";
             e.Value = String.Format(new BinaryFormatter(), fmtStr, e.Value);
             e.FormattingApplied = true;
-        }
-
-        private void resetColumnsFilterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
-            {
-                col.Visible = true;
-                ((ToolStripMenuItem)columnsFilterToolStripMenuItem.DropDownItems[col.Name]).Checked = false;
-            }
-        }
-
-        private void difinitionEditorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (m_dbcName == null)
-                return;
-
-            StartEditor();
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
