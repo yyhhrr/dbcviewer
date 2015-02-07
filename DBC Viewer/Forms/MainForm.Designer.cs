@@ -38,8 +38,6 @@
             this.runPluginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.columnsFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetColumnsFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.difinitionEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,15 +64,12 @@
             this.displayedCellsExceptHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayedCellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cellContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.filterThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.columnContextMenuStrip.SuspendLayout();
-            this.cellContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -139,28 +134,12 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterToolStripMenuItem,
-            this.resetFilterToolStripMenuItem,
             this.columnsFilterToolStripMenuItem,
             this.resetColumnsFilterToolStripMenuItem,
             this.difinitionEditorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.editToolStripMenuItem.Text = "编辑(&E)";
-            // 
-            // filterToolStripMenuItem
-            // 
-            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            this.filterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.filterToolStripMenuItem.Text = "Filter...";
-            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
-            // 
-            // resetFilterToolStripMenuItem
-            // 
-            this.resetFilterToolStripMenuItem.Name = "resetFilterToolStripMenuItem";
-            this.resetFilterToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.resetFilterToolStripMenuItem.Text = "Reset Filter";
-            this.resetFilterToolStripMenuItem.Click += new System.EventHandler(this.resetFilterToolStripMenuItem_Click);
             // 
             // columnsFilterToolStripMenuItem
             // 
@@ -193,7 +172,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.aboutToolStripMenuItem.Text = "关于...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -246,7 +225,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(691, 273);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.VirtualMode = true;
-            this.dataGridView1.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGridView1_CellContextMenuStripNeeded);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.dataGridView1_CellToolTipTextNeeded);
             this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dataGridView1_CurrentCellChanged);
@@ -394,20 +372,6 @@
             this.fillToolStripMenuItem.Text = "Fill";
             this.fillToolStripMenuItem.Click += new System.EventHandler(this.autoSizeColumnsModeToolStripMenuItem_Click);
             // 
-            // cellContextMenuStrip
-            // 
-            this.cellContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterThisToolStripMenuItem});
-            this.cellContextMenuStrip.Name = "cellContextMenuStrip";
-            this.cellContextMenuStrip.Size = new System.Drawing.Size(129, 26);
-            // 
-            // filterThisToolStripMenuItem
-            // 
-            this.filterThisToolStripMenuItem.Name = "filterThisToolStripMenuItem";
-            this.filterThisToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.filterThisToolStripMenuItem.Text = "Filter this";
-            this.filterThisToolStripMenuItem.Click += new System.EventHandler(this.filterThisToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -432,7 +396,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.columnContextMenuStrip.ResumeLayout(false);
-            this.cellContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,8 +416,6 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetFilterToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem runPluginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem columnsFilterToolStripMenuItem;
@@ -474,8 +435,6 @@
         private System.Windows.Forms.ToolStripMenuItem difinitionEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reloadDefinitionsToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.ContextMenuStrip cellContextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem filterThisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }

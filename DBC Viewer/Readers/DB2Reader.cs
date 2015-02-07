@@ -31,7 +31,7 @@ namespace DBCViewer
 
         public DB2Reader(string fileName)
         {
-            using (var reader = BinaryReaderExtensions.FromFile(fileName))
+            using (var reader = new BinaryReader(new FileStream(fileName, FileMode.Open), Encoding.UTF8))
             {
                 if (reader.BaseStream.Length < HeaderSize)
                 {
