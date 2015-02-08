@@ -15,7 +15,6 @@ using System.Xml;
 
 namespace DBCViewer
 {
-
     public partial class MainForm : Form
     {
         // Fields

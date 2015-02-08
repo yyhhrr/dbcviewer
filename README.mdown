@@ -1,16 +1,3 @@
-Утилита для просмотра DBC файлов клиента. Изначально планировалась поддержка только DBC формата, но позже была также добавлена поддержка форматов DB2 ('WDB2', клиент 4.х+), ADB ('WCH2', клиент 4.х+) и WDB.
+本人是一个wow爱好者，此工具可以查看魔兽世界客户端的数据，支持Dbc、Db2、Wdb、Adb读取。
 
-Для открытия файла требуется указать его структуру в файле [dbclayout.xml][]. В данный момент имеются структуры лишь для небольшого числа dbc файлов.
-
-Имеется возможность экспорта в sql, а так же интерфейс для написания плагинов экспорта в другие форматы (csv, xml и т.д.) Для примера можно посмотреть [исходник][Export2SQL.cs] экспортера в sql.
-
-Для запуска утилиты требуется [Microsoft .NET Framework 4.0][].
-
-[dbclayout.xml]: http://github.com/tomrus88/dbcviewer/blob/master/DBC%20Viewer/dbclayout.xml
-[Export2SQL.cs]: http://github.com/tomrus88/dbcviewer/blob/master/Export2SQL/Export2SQL.cs
-[Microsoft .NET Framework 4.0]: http://www.microsoft.com/downloads/details.aspx?familyid=0A391ABD-25C1-4FC0-919F-B21F31AB88B7
-
-
-2015年1月19日
-
-* 项目原地址：https://github.com/tomrus88/dbcviewer ，仅用于各人研究使用，请下载24小时内删除。
+理论上支持wow的全系列版本号1.x - 6.x
