@@ -81,7 +81,6 @@
     <Compile Include="Readers\ADBReader.cs" />
     <Compile Include="Readers\DB2Reader.cs" />
     <Compile Include="Readers\DBCReader.cs" />
-    <Compile Include="Readers\DBReaderFactory.cs" />
     <Compile Include="Readers\BaseReader.cs" />
     <Compile Include="Readers\WDBReader.cs" />
   </ItemGroup>
