@@ -7,6 +7,7 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ using System.Xml;
 
 namespace DBCViewer
 {
+
     public partial class MainForm : Form
     {
         // Fields
@@ -62,6 +64,11 @@ namespace DBCViewer
             string[] cmds = Environment.GetCommandLineArgs();
             if (cmds.Length > 1)
                 LoadFile(cmds[1]);
+
+            // 启用dataGridView的双缓冲,解决dataGridView高频刷新闪烁
+            Type _type = dataGridView1.GetType();
+            PropertyInfo _info = _type.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            _info.SetValue(dataGridView1, true, null);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
