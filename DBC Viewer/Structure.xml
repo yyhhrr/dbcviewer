@@ -281,4 +281,33 @@
     <field type="string" name="name" />
     <field type="string" name="description" />
   </JournalInstance.dbc>
+  <Spell.dbc build="19342">
+    <index>
+      <primary>ID</primary>
+    </index>
+    <field type="uint" name="ID" />
+    <field type="string" name="Name" />
+    <field type="string" name="NameSubtext" />
+    <field type="string" name="Description" />
+    <field type="string" name="AuraDescription" />
+    <field type="uint" name="RuneCostID" />
+    <field type="uint" name="SpellMissileID" />
+    <field type="uint" name="DescriptionVariablesID" />
+    <field type="uint" name="ScalingID" />
+    <field type="uint" name="AuraOptionsID" />
+    <field type="uint" name="AuraRestrictionsID" />
+    <field type="uint" name="CastingRequirementsID" />
+    <field type="uint" name="CategoriesID" />
+    <field type="uint" name="ClassOptionsID" />
+    <field type="uint" name="CooldownsID" />
+    <field type="uint" name="EquippedItemsID" />
+    <field type="uint" name="InterruptsID" />
+    <field type="uint" name="LevelsID" />
+    <field type="uint" name="ReagentsID" />
+    <field type="uint" name="ShapeshiftID" />
+    <field type="uint" name="TargetRestrictionsID" />
+    <field type="uint" name="TotemsID" />
+    <field type="uint" name="RequiredProjectID" />
+    <field type="uint" name="MiscID" />
+  </Spell.dbc>
 </DBFilesClient>
